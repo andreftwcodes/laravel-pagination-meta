@@ -10,17 +10,17 @@
 
 		$last_page = ceil($total / $per_page);
 
-			$from = ($current_page <= $last_page) ? (($current_page * $per_page) - $per_page) + 1 : null;
+		$from = ($current_page <= $last_page) ? (($current_page * $per_page) - $per_page) + 1 : null;
 		$to = ($current_page <= $last_page) ? (($current_page * $per_page) < $total ? ($current_page * $per_page) : $total) : null;
 
-			$meta = [
-				"current_page" => $current_page,
-				"from" => $from,
-				"last_page" => $last_page,
-				"path" => "",
-				"per_page" => $per_page,
-				"to" => $to,
-				"total" => $total
+		$meta = [
+			"current_page" => $current_page,
+			"from" => $from,
+			"last_page" => $last_page,
+			"path" => "",
+			"per_page" => $per_page,
+			"to" => $to,
+			"total" => $total
 		];
 
 		$data = array_slice($collections, $meta['from'] - 1, $per_page);
